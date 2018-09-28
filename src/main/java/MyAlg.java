@@ -11,7 +11,7 @@ import java.util.Random;
 public class MyAlg {
 
     public static void main(String[] args) {
-        int dimension = 2; // dimension of problem
+        int dimension = 4; // dimension of problem
         int populationSize = 10; // size of population
         int generations = 10; // number of generations
 

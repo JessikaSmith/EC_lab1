@@ -9,6 +9,9 @@ public class MyMutation implements EvolutionaryOperator<double[]> {
         // need to change individuals, but not their number!
 
         // your implementation:
+        double sigma = 2;
+        double normal = random.nextGaussian()*sigma;
+       System.out.println(population);
 
         //result population
         return population;
