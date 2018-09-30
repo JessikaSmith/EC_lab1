@@ -2,11 +2,11 @@ import org.uncommons.watchmaker.framework.factories.AbstractCandidateFactory;
 
 import java.util.Random;
 
-public class MyFactory extends AbstractCandidateFactory<double[]> {
+public class KhodFactory extends AbstractCandidateFactory<double[]> {
 
     private int dimension;
 
-    public MyFactory(int dimension) {
+    public KhodFactory(int dimension) {
         this.dimension = dimension;
     }
 
@@ -19,7 +19,6 @@ public class MyFactory extends AbstractCandidateFactory<double[]> {
         for(int i=0; i < dimension; i++){
             solution[i] = min + (max - min) * random.nextDouble();
         }
-
         // your implementation:
 
         return solution;
