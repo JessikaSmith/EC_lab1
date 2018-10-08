@@ -22,12 +22,39 @@ public class KhodCrossover extends AbstractCrossover<double[]> {
 
 
 //        === Whole Arithmetic Recombination
-        alpha = 0.6;
-        for (i = 0; i < p1.length; i++){
-            temp = p1[i];
-            p1[i] = p1[i]*alpha + p2[i]*(1-alpha);
-            p2[i] = p2[i]*alpha + temp*(1-alpha);
+//        alpha = 0.6;
+//        for (i = 0; i < p1.length; i++){
+//            temp = p1[i];
+//            alpha = random.nextDouble();
+//            System.out.println(alpha);
+//            p1[i] = p1[i]*alpha + p2[i]*(1-alpha);
+//            alpha = random.nextDouble();
+//            p2[i] = p2[i]*alpha + temp*(1-alpha);
+//        }
+
+        for (i = 0; i < p1.length; i++) {
+            alpha = random.nextDouble();
+            if (alpha >= 0.5) {
+                // alpha = random.nextDouble();
+                temp = p1[i];
+                p1[i] = p2[i];
+                p2[i] = temp;
+            }
+
+//            alpha = random.nextDouble();
+//            if (alpha > 0.5) {
+//                p2[i] = p1[i]*alpha;
+//            }
         }
+
+//        double dif;
+//        alpha = 0.6;
+//        for (i = 0; i < p1.length; i++) {
+//            dif = p1[i] - p2[i];
+//            p1[i] += dif;
+//            p2[i] += dif;
+//        }
+
 
 //        === Blend crossover
 //        j = random.nextInt(p1.length);
@@ -37,6 +64,7 @@ public class KhodCrossover extends AbstractCrossover<double[]> {
 //        } else {
 //            p2[j] = p1[j] = (1 - gamma) * p1[j] + gamma * p2[j];
 //        }
+
 
 //        === Simple ariphmetic recombination
 //        j = random.nextInt(p1.length);

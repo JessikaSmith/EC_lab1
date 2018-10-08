@@ -15,10 +15,10 @@ public class KhodMutation implements EvolutionaryOperator<double[]> {
         double mutation_step_size = 2;
         double mutation_rate = random.nextDouble() * (Math.abs(1 / population.size() - 1 / problem_size))
                 + Math.min(1 / population.size(), 1 / problem_size);
-        mutation_rate = 0.7;
+//        mutation_rate = 0.7;
         for (int i = 0; i < population.size(); i++) {
             for (int j = 0; j < problem_size; j++) {
-                coin_flip = random.nextInt();
+                coin_flip = random.nextDouble();
                 if (coin_flip < mutation_rate) {
                     population.get(0)[j] += random.nextGaussian() * mutation_step_size;
                     if (population.get(0)[j] < -5) {

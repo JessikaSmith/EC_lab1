@@ -10,9 +10,9 @@ import java.util.Random;
 public class KhodAlg {
 
     public static void main(String[] args) {
-        int dimension = 3; // dimension of problem
+        int dimension = 10; // dimension of problem
         int populationSize = 300; // size of population
-        int generations = 10; // number of generations
+        int generations = 100; // number of generations
 
         Random random = new Random(); // random
 
