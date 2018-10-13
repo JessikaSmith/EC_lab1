@@ -12,20 +12,23 @@ public class KhodCrossover extends AbstractCrossover<double[]> {
     protected List<double[]> mate(double[] p1, double[] p2, int i, Random random) {
 
         ArrayList children = new ArrayList();
-        double temp, alpha;
+        double temp;
+        int len;
 
-        for (i = 0; i < p1.length; i++) {
-            if (random.nextDouble() >= 0.5) {
-                alpha = random.nextDouble()*2-1;
+        len = p1.length;
+        double[] a1 = new double[len];
+        double[] a2 = new double[len];
+
+        for (i = 0; i < len; i++) {
+            if (random.nextDouble() > 0.5) {
                 temp = p1[i];
-                p1[i] = p2[i] + p2[i] * alpha;
-                alpha = random.nextDouble()*2-1;
-                p2[i] = temp + temp * alpha;
+                a1[i] = p2[i] + p2[i] * (random.nextDouble() * 2 - 1);
+                a2[i] = temp + temp * (random.nextDouble() * 2 - 1);
             }
         }
 
-        children.add(p1);
-        children.add(p2);
+        children.add(a1);
+        children.add(a2);
         return children;
     }
 }
