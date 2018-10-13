@@ -8,12 +8,13 @@ public class KhodMutation implements EvolutionaryOperator<double[]> {
 
         int problem_size = population.get(0).length;
 
-        double mutation_step_size = 0.08;   // /problem_size;
+        double mutation_prob = 0.5;   // /problem_size;
         for (int i = 0; i < population.size(); i++) {
-            for (int j = 0; j < problem_size; j++) {
-                population.get(i)[j] += mutation_step_size * (random.nextGaussian() * 5);
-                population.get(i)[j] %= 6.0;
-            }
+//            if (random.nextDouble() < mutation_prob) {
+                for (int j = 0; j < problem_size; j++) {
+                    population.get(i)[j] += random.nextGaussian();
+                }
+//            }
         }
         return population;
     }
