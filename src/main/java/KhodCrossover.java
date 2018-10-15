@@ -19,7 +19,7 @@ public class KhodCrossover extends AbstractCrossover<double[]> {
         double[] a2 = new double[len];
 
         for (i = 0; i < len; i++) {
-            if (random.nextDouble() < 0.3) {
+            if (random.nextDouble() < 0.1) {
                 a1[i] = p2[i];// + p2[i] * (random.nextDouble() * 2 - 1);
                 a2[i] = p1[i];// + temp * (random.nextDouble() * 2 - 1);
             }
