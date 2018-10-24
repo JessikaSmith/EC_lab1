@@ -1,27 +1,26 @@
 import org.uncommons.watchmaker.framework.*;
 import org.uncommons.watchmaker.framework.operators.EvolutionPipeline;
 import org.uncommons.watchmaker.framework.selection.RouletteWheelSelection;
-import org.uncommons.watchmaker.framework.selection.TournamentSelection;
 import org.uncommons.watchmaker.framework.termination.GenerationCount;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Random;
 
-public class MyAlg {
+public class KhodAlg {
 
     public static void main(String[] args) {
-        int dimension = 2; // dimension of problem
-        int populationSize = 10; // size of population
-        int generations = 10; // number of generations
+        int dimension = 200; // dimension of problem
+        int populationSize = 20; // size of population
+        int generations = 100000; // number of generations
 
         Random random = new Random(); // random
 
-        CandidateFactory<double[]> factory = new MyFactory(dimension); // generation of solutions
+        CandidateFactory<double[]> factory = new KhodFactory(dimension); // generation of solutions
 
         ArrayList<EvolutionaryOperator<double[]>> operators = new ArrayList<EvolutionaryOperator<double[]>>();
-        operators.add(new MyCrossover()); // Crossover
-        operators.add(new MyMutation()); // Mutation
+        operators.add(new KhodCrossover()); // Crossover
+        operators.add(new KhodMutation()); // Mutation
         EvolutionPipeline<double[]> pipeline = new EvolutionPipeline<double[]>(operators);
 
         SelectionStrategy<Object> selection = new RouletteWheelSelection(); // Selection operator
